@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "acf/versatility-table-block-01",
+    "title": "テーブル",
+    "description": "テーブルのセクションです",
+    "style": [ "" ],
+    "category": "3df_section",
+    "icon": "book",
+    "keywords": ["テーブル"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+        "ClassName": false,
+        "html": false
+    },
+    "align": "full"
+}

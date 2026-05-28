@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@use './global/'as g;
+@use './object';
+
+body {
+	a {
+		color: #029de3;
+    text-decoration: none;
+    outline: none;
+	}
+	@extend %diver;
+	@extend %backwards;
+}
+
+#tinymce.content {
+	font-family: g.$fontJP;
+	max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 24px !important;
+
+	@extend %post;
+
+	.sc_toggle_box .sc_toggle_content {
+		position: unset;
+		height: unset;
+		visibility: unset;
+		padding: 20px;
+	}
+}

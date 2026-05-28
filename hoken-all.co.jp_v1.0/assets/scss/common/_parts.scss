@@ -1,0 +1,203 @@
+@use "../_import"as *;
+
+
+// opacity
+// ---------------------
+.opacity {
+  text-decoration: none;
+  transition: var(--transition);
+
+  a img,
+  a:hover img,
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.font-family-jp {
+  font-family: var(--font-family) !important;
+}
+
+.font-family-en {
+  font-family: var(--font-family-en) !important;
+}
+
+
+// Variables
+// ---------------------
+$colors: (black: var(--color-black),
+  black-light: var(--color-black-light),
+  gray: var(--color-gray),
+  gray-light: var(--color-gray-light),
+  light-gray: var(--color-light-gray),
+  light-gray-light: var(--color-light-gray-light),
+  white: var(--color-white),
+  red: var(--color-red),
+  red-light: var(--color-red-light),
+  teal: var(--color-teal),
+  teal-light: var(--color-teal-light),
+  blue: var(--color-blue),
+  blue-light: var(--color-blue-light),
+  aqua: var(--color-aqua),
+  aqua-light: var(--color-aqua-light),
+  mint: var(--color-mint),
+  mint-light: var(--color-mint-light),
+  grass: var(--color-grass),
+  grass-light: var(--color-grass-light),
+  yellow: var(--color-yellow),
+  yellow-light: var(--color-yellow-light),
+  brand-gradient: var(--brand-gradient),
+  brand-light-3: var(--brand-light-3),
+  brand-light-2: var(--brand-light-2),
+  brand-light-1: var(--brand-light-1),
+  brand: var(--brand),
+  brand-dark-1: var(--brand-dark-1),
+  brand-text: var(--brand-text),
+  brand-orange: var(--brand-orange),
+  brand-gold: var(--brand-gold),
+  accent-red: var(--accent-red),
+  accent-yellow: var(--accent-yellow),
+  accent-green: var(--accent-green),
+  accent-purple: var(--accent-purple),
+  accent-blue: var(--accent-blue),
+  accent-light-blue: var(--accent-light-blue));
+$font-sizes: (xxx-large: var(--fs-xxx-large),
+  xx-large: var(--fs-xx-large),
+  x-large: var(--fs-x-large),
+  large: var(--fs-large),
+  xx-middle: var(--fs-xx-middle),
+  x-middle: var(--fs-x-middle),
+  middle: var(--fs-middle),
+  x-default: var(--fs-x-default),
+  default: var(--fs-default),
+  small: var(--fs-small),
+  x-small: var(--fs-x-small),
+);
+$widths: (auto: auto,
+  full: 100%,
+  three-quarters: 75%,
+  half: 50%,
+);
+$text-aligns: (left: left,
+  right: right,
+  center: center,
+  justify: justify,
+);
+$font-weights: (normal: 400,
+  medium: 500,
+  bold: 700,
+  black: 900,
+);
+$displays: (block: block,
+  flex: flex,
+  inline-flex: inline-flex,
+);
+
+// Mixins
+// ---------------------
+@mixin generate-utilities {
+
+  // Color classes
+  @each $name,
+  $color in $colors {
+    .color-#{$name} {
+      color: $color !important;
+    }
+
+    .bg-#{$name} {
+      background-color: #{$color} !important;
+    }
+  }
+
+  // Font size classes
+  @each $name,
+  $size in $font-sizes {
+    .font-size-#{$name} {
+      font-size: $size !important;
+    }
+  }
+
+  // Width classes
+  @each $name,
+  $value in $widths {
+    .width-#{$name} {
+      width: $value !important;
+      max-width: 100% !important;
+
+      @if $name=='three-quarters'or $name=='half' {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  // Text align classes
+  @each $name,
+  $value in $text-aligns {
+    .text-#{$name} {
+      text-align: $value !important;
+    }
+  }
+
+  // Font weight classes
+  @each $name,
+  $weight in $font-weights {
+    .font-weight-#{$name} {
+      font-weight: $weight !important;
+    }
+  }
+
+  // Display classes for PC and SP
+  @each $name,
+  $value in $displays {
+    .display-#{$name}-pc {
+      display: $value;
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+    }
+
+    .display-#{$name}-sp {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: $value !important;
+      }
+    }
+
+    .display-#{$name}-xsp {
+      display: none;
+
+      @media (max-width: 350px) {
+        display: $value !important;
+      }
+    }
+
+  }
+}
+
+// Margin and Padding Generators
+// ---------------------
+@mixin generate-spacing($property, $prefix, $direction) {
+  @for $i from 0 through 20 {
+    .#{$prefix}#{$i} {
+      #{$property}-#{$direction}: $i * 8px !important;
+
+      @media (max-width: 768px) {
+        #{$property}-#{$direction}: calc(#{$i * 8px} / 1.5) !important;
+      }
+    }
+  }
+}
+
+// Usage
+// ---------------------
+@include generate-utilities;
+
+@include generate-spacing(margin, 'mt', 'top');
+@include generate-spacing(margin, 'mb', 'bottom');
+@include generate-spacing(padding, 'pt', 'top');
+@include generate-spacing(padding, 'pr', 'right');
+@include generate-spacing(padding, 'pb', 'bottom');
+@include generate-spacing(padding, 'pl', 'left');

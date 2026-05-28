@@ -1,0 +1,613 @@
+@use "../_import"as *;
+
+// ----------------------------------------
+// 下層ページ見出し 画像あり
+// ----------------------------------------
+.-section-headLower-imageHeader {
+  position: relative;
+
+  .-imageHeader {
+    width: 520px;
+    height: 320px;
+    object-fit: cover;
+    position: absolute;
+    top: 10vw;
+    right: 8vw;
+
+    @include mq(ipadPro) {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+      height: 340px;
+      right: 0;
+      top: 0;
+    }
+
+    @include mq(sm) {
+      height: 320px;
+    }
+
+    @include mq(xs) {
+      height: 200px;
+    }
+  }
+}
+
+
+// ----------------------------------------
+// 下層ページ見出し 画像なし
+// ----------------------------------------
+.-section-headLower {
+  background: url(../img/common/fv-bg.webp) no-repeat center top;
+  background-size: cover;
+  padding: 240px 0 56px 0;
+  position: relative;
+
+  @include mq(sm) {
+    padding: 132px 0 56px;
+  }
+
+  .-section-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .post-categories {
+    text-align: left;
+    display: flex;
+    padding: 0 0 16px 0;
+
+    li {
+      a {
+        color: var(--color-white);
+        font-size: var(--fs-x-default);
+        font-weight: var(--weight-bold);
+
+        @include mq(sm) {
+          font-size: var(--fs-default);
+        }
+      }
+    }
+  }
+
+  .-head-title {
+    border: none !important;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+    color: var(--color-white);
+    position: relative;
+    text-align: justify;
+
+    &::before {
+      content: attr(data-text-en);
+      font-family: var(--font-family-en);
+      font-size: var(--fs-x-default);
+      font-weight: var(--weight-bold);
+      text-transform: uppercase;
+      opacity: .7;
+      position: absolute;
+      top: -32px;
+      left: 4px;
+
+      @include mq(sm) {
+        font-size: var(--fs-small);
+        top: -24px;
+        left: 2px;
+      }
+    }
+
+    span {
+      font-size: 40px !important;
+      font-weight: var(--weight-xbold) !important;
+      line-height: 1.4;
+      letter-spacing: 1px;
+
+      @include mq(sm) {
+        font-size: var(--fs-xx-middle) !important;
+        line-height: 1.6;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    small {
+      font-size: var(--fs-x-default);
+      padding: 0 0 0 8px;
+
+      @include mq(sm) {
+        font-size: var(--fs-default);
+      }
+
+      @include mq(xxs) {
+        font-size: var(--fs-small);
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------
+// 下層ページ見出しの下のテキスト
+// ----------------------------------------
+.-headLower-bottomText {
+  text-align: justify;
+
+  @include mq(sm) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .-title {
+    font-size: var(--fs-xxxx-large);
+    font-weight: var(--weight-xbold);
+    color: var(--brand);
+    line-height: 1.4;
+
+    @include mq(sm) {
+      font-size: var(--fs-xx-middle);
+    }
+
+    @include mq(xxs) {
+      font-size: var(--fs-x-middle);
+    }
+
+    b,
+    strong {
+      font-weight: var(--weight-xbold);
+    }
+  }
+
+  .-body {
+    margin: 24px 0 0 0;
+    font-size: var(--fs-x-default);
+    color: var(--color-black-light);
+    line-height: 1.9;
+
+    @include mq(sm) {
+      margin-top: 16px;
+      font-size: var(--fs-default);
+
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------
+// セクション
+// ----------------------------------------
+.-section-main {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  @include mq(sm) {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  @include mq(xs) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  &.-padding-small {
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @include mq(sm) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &.-padding-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include mq(sm) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.-bg-white {
+    background-color: var(--color-white);
+  }
+
+  &.-bg {
+    background-color: var(--color-light-gray-light);
+  }
+
+  &.-bg-brand {
+    background-color: var(--brand-light-3);
+  }
+}
+
+.-section-inner {
+  @include mainWidth();
+
+  &.-middle {
+    max-width: 800px;
+
+    @include mq(sm) {
+      max-width: 480px;
+    }
+  }
+
+  &.-small {
+    max-width: 640px;
+
+    @include mq(sm) {
+      max-width: 480px;
+    }
+  }
+
+  &.-row {
+    display: flex;
+    gap: 0 64px;
+
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 32px 0;
+    }
+
+    .-row-head {
+      width: 100%;
+      max-width: 260px;
+
+      @include mq(sm) {
+        max-width: 100%;
+      }
+    }
+
+    .-row-body {
+      width: 100%;
+    }
+  }
+
+  .-common-head {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .-common-head__title {
+    color: var(--brand);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px 0;
+
+    &::before {
+      content: attr(data-subTitle);
+      font-size: var(--fs-small);
+      font-family: var(--font-family-en);
+      line-height: 1;
+    }
+
+    span {
+      font-size: var(--fs-xx-large);
+      font-weight: var(--weight-xbold);
+      position: relative;
+      line-height: 1.5;
+
+      @include mq(sm) {
+        font-size: var(--fs-large);
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------
+// 見出しタイトル
+// ----------------------------------------
+.-headLower-subTitle {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  gap: 12px 0;
+
+  small {
+    font-size: var(--fs-default);
+    font-weight: var(--weight-bold);
+    letter-spacing: 1px;
+
+    @include mq(sm) {
+      font-size: var(--fs-small);
+    }
+  }
+
+  .-title {
+    font-size: var(--fs-xxxx-large);
+    font-weight: var(--weight-xbold);
+    color: var(--brand);
+
+    span {
+      letter-spacing: 2px;
+    }
+
+    @include mq(sm) {
+      font-size: var(--fs-large);
+    }
+
+    @include mq(xxs) {
+      font-size: var(--fs-middle);
+    }
+  }
+
+  .-description {
+    text-align: center;
+  }
+}
+
+
+// ----------------------------------------
+// ボタン
+// ----------------------------------------
+body {
+  .-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    @include mq(sm) {
+      flex-direction: column;
+    }
+
+    .-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: var(--fs-default);
+      background: var(--color-light-gray-light);
+      font-weight: var(--weight-bold);
+      color: var(--color-gray);
+      padding: 0 24px;
+      height: 48px;
+      min-width: 200px;
+      width: auto;
+      line-height: 1.5;
+      white-space: nowrap;
+      position: relative;
+      border-radius: 2px;
+      text-decoration: none !important;
+
+      span {
+        text-align: center;
+        color: inherit;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      small {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-white);
+        color: var(--color-gray);
+        font-size: var(--fs-x-small);
+        border-radius: 2px 2px 0 0;
+        padding: 4px 12px;
+        line-height: 1;
+        border-radius: 50rem;
+        margin: 0 auto;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      &:hover {
+        filter: saturate(150%);
+      }
+
+      &.-large {
+        height: 64px;
+        font-size: var(--fs-x-default);
+
+        @include mq(sm) {
+          height: 56px;
+          font-size: var(--fs-default);
+        }
+
+        @include mq(xs) {
+          height: 48px;
+        }
+      }
+
+      &.-full {
+        max-width: 100%;
+      }
+
+      &.-primary {
+        background: var(--brand);
+        color: var(--color-white) !important;
+        border: 2px solid var(--brand);
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+
+      &.-primary-line {
+        background: var(--color-white);
+        color: var(--brand) !important;
+        border: 2px solid var(--brand);
+
+        &:hover {
+          background: var(--brand);
+          color: var(--color-white) !important;
+        }
+      }
+
+      &.-white {
+        background: var(--color-white);
+        color: var(--brand) !important;
+
+        &:hover {}
+      }
+
+      &.-brand-orange {
+        background: var(--brand-orange);
+        color: var(--color-white) !important;
+
+        &:hover {}
+      }
+
+      &.-gray {
+        background: var(--color-light-gray);
+        color: var(--color-gray) !important;
+
+        &:hover {
+          background: var(--color-light-gray-light);
+        }
+      }
+
+      &.-btn-arrow {
+        justify-content: flex-start;
+        padding-left: 24px;
+        padding-right: 56px;
+        background: var(--brand);
+        color: var(--color-white);
+
+        &::after {
+          content: '';
+          background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%2212%22%20fill%3D%22%23ECEFF8%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M10.0037%206.66797L15.337%2012.0013L10.0037%2017.3346L8.66699%2016.0013L12.6703%2012.0013L8.66699%208.0013L10.0037%206.66797Z%22%20fill%3D%22%2315378E%22%2F%3E%3C%2Fsvg%3E');
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 20px;
+          height: 20px;
+          display: block;
+          border-radius: 50rem;
+          position: absolute;
+          right: 20px;
+
+          @include mq(sm) {
+            transform: scale(.9);
+          }
+        }
+
+        &.-white {
+          background: var(--color-white);
+          color: var(--brand) !important;
+
+          &:hover {
+            background: var(--brand-light-3);
+          }
+        }
+      }
+
+      @include mq(sm) {
+        height: 48px;
+        max-width: 100%;
+        min-width: none;
+        font-size: var(--fs-default);
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------
+//  breadcrumbs
+// ----------------------------------------
+body {
+  &.home {
+    .breadcrumbs {
+      background: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.breadcrumbs {
+  text-align: left;
+  background: var(--brand-light-3);
+  padding: 8px 0;
+
+  @include mq(sm) {}
+}
+
+.breadcrumbs-inner {
+  @include mainWidth();
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  @include mq(sm) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  a {
+    &:hover {
+      opacity: .6;
+    }
+
+    &.home {
+      position: relative;
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M18.1195%2010.2758L10.6195%201.9425C10.3036%201.59083%209.69698%201.59083%209.38115%201.9425L1.88115%2010.2758C1.77319%2010.3955%201.70233%2010.5439%201.67718%2010.7031C1.65203%2010.8623%201.67367%2011.0254%201.73948%2011.1725C1.87281%2011.4733%202.17115%2011.6667%202.50031%2011.6667H4.16698V17.5C4.16698%2017.721%204.25478%2017.933%204.41106%2018.0893C4.56734%2018.2455%204.7793%2018.3333%205.00031%2018.3333H7.50031C7.72133%2018.3333%207.93329%2018.2455%208.08957%2018.0893C8.24585%2017.933%208.33365%2017.721%208.33365%2017.5V14.1667H11.667V17.5C11.667%2017.721%2011.7548%2017.933%2011.9111%2018.0893C12.0673%2018.2455%2012.2793%2018.3333%2012.5003%2018.3333H15.0003C15.2213%2018.3333%2015.4333%2018.2455%2015.5896%2018.0893C15.7458%2017.933%2015.8336%2017.721%2015.8336%2017.5V11.6667H17.5003C17.6617%2011.6674%2017.8198%2011.6211%2017.9553%2011.5335C18.0909%2011.4458%2018.198%2011.3207%2018.2636%2011.1732C18.3293%2011.0258%2018.3506%2010.8625%2018.325%2010.7031C18.2994%2010.5438%2018.228%2010.3953%2018.1195%2010.2758V10.2758Z%22%20fill%3D%22%23999999%22%2F%3E%3C%2Fsvg%3E');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15px;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  i {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M3.57501%2010.55C3.45001%2010.425%203.38751%2010.277%203.38751%2010.106C3.38751%209.93533%203.45001%209.7875%203.57501%209.6625L7.23751%206L3.56251%202.325C3.44585%202.20833%203.38751%202.0625%203.38751%201.8875C3.38751%201.7125%203.45001%201.5625%203.57501%201.4375C3.70001%201.3125%203.84801%201.25%204.01901%201.25C4.18968%201.25%204.33751%201.3125%204.46251%201.4375L8.66251%205.65C8.71251%205.7%208.74801%205.75417%208.76901%205.8125C8.78968%205.87083%208.80001%205.93333%208.80001%206C8.80001%206.06667%208.78968%206.12917%208.76901%206.1875C8.74801%206.24583%208.71251%206.3%208.66251%206.35L4.45001%2010.5625C4.33335%2010.6792%204.18968%2010.7375%204.01901%2010.7375C3.84801%2010.7375%203.70001%2010.675%203.57501%2010.55Z%22%20fill%3D%22%23B3B3B3%22%2F%3E%3C%2Fsvg%3E');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+
+    @include mq(sm) {
+      margin: 0 2px;
+    }
+  }
+
+  span {
+    font-size: var(--fs-small);
+    color: var(--color-gray);
+    line-height: 1.3;
+
+    br {
+      display: none;
+    }
+
+    @include mq(sm) {
+      font-size: 10px;
+    }
+
+    &:last-of-type {
+      @media screen and (min-width: 769px) and (max-width: 2000px) {
+        max-width: 500px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

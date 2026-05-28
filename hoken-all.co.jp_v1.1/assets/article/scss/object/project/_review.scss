@@ -1,0 +1,78 @@
+/* 口コミ */
+
+@use "sass:map";
+@use 'sass:color';
+@use '../../global'as g;
+
+.p-review {
+	background: g.$grayLight;
+	margin: 0 calc(50% - 50vw);
+
+	@include g.mq() {
+		margin-left: unset;
+		margin-right: unset;
+		border-radius: 0 0 8px 8px;
+	}
+
+	&__title {
+		font-weight: bold;
+		color: g.$white;
+		background: g.$brand;
+		padding: 8px 4%;
+
+		@include g.mq() {
+			border-radius: 8px 8px 0 0;
+			padding: 8px 16px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		gap: 8px;
+		padding: 16px 4%;
+
+		@include g.mq() {
+			padding: 16px;
+			gap: 16px;
+		}
+	}
+
+	&__item {
+		font-size: 12px;
+		min-width: 180px;
+		position: relative;
+		background: g.$white;
+		border-radius: 4px;
+
+		@include g.mq(xs) {
+			min-width: 220px;
+		}
+
+		@include g.mq() {
+			min-width: 240px;
+			font-size: 14px;
+			border-radius: 8px;
+		}
+
+	}
+
+	&__subTitle {
+		color: g.$brand;
+		font-weight: bold;
+		line-height: 1.2;
+		border-bottom: 4px solid g.$grayLight;
+		padding: 8px;
+
+		@include g.mq() {
+			padding: 8px 16px;
+		}
+	}
+
+	&__body {
+		padding: 8px;
+
+		@include g.mq() {
+			padding: 16px;
+		}
+	}
+}

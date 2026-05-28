@@ -1,0 +1,146 @@
+/* 記事ページ内 ランキングテーブル */
+
+@use "sass:map";
+@use "sass:color";
+@use "../../global" as g;
+
+.p-rankingWrap {
+	margin: 0 calc(50% - 50vw);
+	overflow-x: auto;
+
+	@include g.mq() {
+		margin-left: unset;
+		margin-right: unset;
+	}
+
+}
+
+.p-rankingTable {
+	display: table;
+	border-spacing: 2px;
+
+	&,
+	body & p {
+		font-size: 11px;
+		line-height: 1.2;
+
+		@include g.mq() {
+			font-size: 12px;
+		}
+
+	}
+}
+
+.p-rankingRow {
+	display: table-row;
+
+	&__title,
+	&__cell {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 8px 4px;
+		border: none;
+
+		@include g.mq() {
+			padding: 12px 4px;
+		}
+
+		.p-rankingRow:last-child & {
+			border-bottom: none;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		text-align: right;
+		font-size: 11px;
+		color: g.$white;
+		background: g.$brand;
+		width: 90px;
+		position: sticky;
+		left: 0;
+		z-index: 10;
+	}
+
+	&__cell {
+		width: 130px;
+		text-align: center;
+		background: g.$grayLight;
+		word-break: break-all;
+
+		strong {
+			font-weight: bold;
+			color: g.$alert;
+		}
+	}
+
+	&:first-child &__cell {
+		font-weight: bold;
+		color: g.$brand;
+	}
+
+	&__img {
+
+		a {
+			display: block;
+		}
+
+		img {
+			display: block;
+			width: 120px;
+			height: auto;
+			margin: 0 !important;
+		}
+
+	}
+
+	.p-rankingRow__noImg {
+		display: block;
+		width: 120px;
+		height: 90px;
+		background-size: auto auto;
+		background-color: #f6f6f6;
+		background-image: repeating-linear-gradient(45deg, transparent, transparent 4px, #f3f3f3 4px, #f3f3f3 8px);
+		border: 1px solid #f3f3f3;
+		color: #999;
+		font-weight: normal;
+		text-align: center;
+		font-size: 10px;
+		line-height: 10px;
+		padding: 40px 0;
+	}
+
+	.p-rankingRow__btn {
+
+		a {
+			display: block;
+			width: 100%;
+			border-radius: 4px;
+			padding: 10px 0;
+			font-size: 14px;
+			font-weight: bold;
+			background: g.$cv;
+			color: #fff !important;
+			text-decoration: none;
+
+			&:hover {
+				background: lighten(g.$cv, 16%);
+			}
+		}
+	}
+}
+
+.p-rankingSticky {
+	position: sticky;
+	left: 35px;
+	margin-left: 10px;
+	width: 145px;
+	z-index: 10;
+}
+
+.p-rankingCheckbox {
+	position: sticky;
+	left: 0;
+	z-index: 10;
+	width: 50px;
+}

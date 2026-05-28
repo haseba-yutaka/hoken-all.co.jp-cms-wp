@@ -1,0 +1,136 @@
+/* 記事ページ内 関連記事 */
+
+@use "sass:map";
+@use "sass:color";
+@use "../../global"as g;
+
+body .p-article-content .p-relatedPosts {
+	background: g.$grayLight;
+	padding: 16px;
+	position: relative;
+	max-height: 200px;
+	overflow: auto;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 8px;
+	margin: 0 calc(-50vw + 50%);
+
+	@include g.mq(sm) {
+		gap: 12px;
+	}
+
+	@include g.mq() {
+		padding: 24px;
+		gap: 16px;
+		max-height: unset;
+		overflow: visible;
+		margin: 0;
+	}
+
+	h2 {
+		background: transparent;
+		color: g.$brand;
+		font-size: 16px;
+		padding: 0;
+		margin: 0;
+		border: none;
+
+		@include g.mq() {
+			font-size: 16px;
+		}
+	}
+
+	h3 {
+		font-size: 12px;
+		color: g.$brand;
+		border: solid g.$brand;
+		border-width: 0 0 0 4px;
+		padding: 0 0 0 4px;
+		margin: 0;
+
+		@include g.mq() {
+			font-size: 14px;
+		}
+	}
+
+	ul {
+		display: grid;
+		gap: 8px;
+		padding: 0;
+
+		@include g.mq(sm) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include g.mq() {
+			gap: 8px 16px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		li {
+			font-size: 10px;
+			line-height: 1.2;
+			padding-left: 16px;
+			position: relative;
+
+			@include g.mq(lg){
+				font-size: 12px;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+			}
+
+			&::before {
+				width: 10px;
+				height: 10px;
+				border: 1px solid g.$black;
+				top: 1px;
+				left: 0;
+				border-radius: 50%;
+
+				@include g.mq(lg) {
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			&::after {
+				width: 4px;
+				height: 4px;
+				border: solid g.$black;
+				border-width: 1px 1px 0 0;
+				transform: translateY(-50%) rotate(45deg);
+				top: 6px;
+				left: 2px;
+
+				@include g.mq(lg) {
+					width: 5px;
+					height: 5px;
+					left: 2px;
+					top: 7px;
+				}
+			}
+		}
+
+		a {
+			color: g.$black;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	h2+ul {
+		margin-top: 0;
+	}
+
+}

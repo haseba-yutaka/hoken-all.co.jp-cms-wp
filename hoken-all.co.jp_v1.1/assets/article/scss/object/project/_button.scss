@@ -1,0 +1,128 @@
+/* ボタンのデザイン */
+
+@use "sass:map";
+@use "../../global"as g;
+
+.p-button {
+	text-align: center;
+
+	@include g.mq(){
+		width: 80%;
+		max-width: 550px;
+		margin: 0 auto;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+
+	&__subTitle {
+		display: block;
+		font-weight: bold;
+		color: g.$black;
+		margin: 0 auto -8px;
+		padding: 8px;
+		background: g.$highlight;
+		animation: subtitle 2s ease infinite;
+		width: fit-content;
+		position: relative;
+		z-index: 1;
+
+		@include g.mq(){
+			font-size: 16px;
+		}
+
+		&::after{
+			content: '';
+			display: block;
+			width: 8px;
+			height: 8px;
+			background: g.$highlight;
+			transform: rotate(45deg) translateX(-50%);
+			position: absolute;
+			bottom: -7px;
+			left: 50%;
+
+			@include g.mq(){
+				width: 12px;
+				height: 12px;
+				bottom: -10px;
+			}
+		}
+	}
+
+	&__text {
+		display: block;
+		padding: 16px 40px;
+		color: g.$white;
+		border-radius: 16px;
+		font-size: 18px;
+		transition: ease .2s;
+		position: relative;
+		font-weight: bold;
+
+		@include g.mq() {
+			font-size: 24px;
+			padding: 24px 40px;
+		}
+
+		a:hover & {
+			transform: translateY(4px);
+		}
+
+		&::before{
+			content: '';
+			display: block;
+			background: g.$highlight;
+			width: 16px;
+			height: 24px;
+			clip-path: polygon(0 0, 0% 100%, 100% 50%);
+			position: absolute;
+			right: 8px;
+			top: 50%;
+			transform: translateY(-50%);
+			box-shadow: 0 1px 1px rgba(0,0,0,.1)
+		}
+	}
+
+
+	&--jump {
+		@extend .p-button;
+	}
+
+	&--jump &__text {
+		background: g.$jump;
+		box-shadow: 0 4px 0 darken(g.$jump, 50%), inset 0 2px 0 lighten(g.$jump, 50%);
+	}
+
+	&--cv {
+		@extend .p-button;
+	}
+
+	&--cv &__text {
+		background: g.$cv;
+		box-shadow: 0 4px 0 darken(g.$cv, 20%), inset 0 2px 0 lighten(g.$cv, 20%);
+	}
+
+}
+
+
+@keyframes subtitle {
+	0% {
+		transform: translateY(0);
+	}
+
+	80% {
+		transform: translateY(2px);
+	}
+
+	90% {
+		transform: translateY(-1px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}

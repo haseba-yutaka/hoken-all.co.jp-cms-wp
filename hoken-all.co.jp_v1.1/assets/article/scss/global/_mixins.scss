@@ -1,0 +1,166 @@
+/* Mixins */
+
+@use "sass:map";
+@use 'variables'as v;
+
+/**
+* メディアクエリの呼び出し
+*
+* レスポンシブ対応のためのメディアクエリを呼び出します。
+* ブレイクポイントは _variavles.scss で設定して下さい。
+*
+* 【使用例】
+*	@include g.mq() {
+*		font-size: 18px;
+*	}
+*/
+
+@mixin mq($breakpoint: md, $max: min) {
+	@if ($max==max) {
+		@media (max-width: calc(#{map.get( v.$breakpoints, $breakpoint)} - 1px)) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (min-width: #{map.get( v.$breakpoints, $breakpoint)}) {
+			@content;
+		}
+	}
+}
+
+@mixin mq_md($reverse: false) {
+	@if ($reverse==true) {
+
+		@media (min-width: #{map.get( v.$breakpoints, 'lg' )}),
+		(max-width: calc(#{map.get( v.$breakpoints, 'md' )} - 1px)) {
+			@content;
+		}
+
+	}
+
+	@else {
+
+		@media (min-width: #{map.get( v.$breakpoints, 'md' )}) and (max-width: calc(#{map.get( v.$breakpoints, 'lg' )} - 1px)) {
+			@content;
+		}
+
+	}
+}
+
+/* 文字サイズ */
+@mixin fz($size: body) {
+
+	@if ($size==h1) {
+		font-size: 20px;
+		line-height: 1.5;
+		font-weight: bold;
+
+		@media (min-width: 768px) {
+			font-size: 32px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 40px;
+		}
+	}
+
+	@if ($size==h2) {
+		font-size: 18px;
+		line-height: 1.5;
+		font-weight: bold;
+
+		@media (min-width: 376px) {
+			font-size: 20px;
+		}
+
+		@media (min-width: 768px) {
+			font-size: 24px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 32px;
+		}
+
+		small{
+			font-size: 12px;
+
+			@media (min-width: 376px) {
+				font-size: 14px;
+			}
+
+			@media (min-width: 768px) {
+				font-size: 16px;
+			}
+
+			@media (min-width: 1280px) {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	@if ($size==h3) {
+		font-size: 16px;
+		line-height: 1.5;
+		font-weight: bold;
+
+		@media (min-width: 768px) {
+			font-size: 18px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 22px;
+		}
+	}
+
+	@if ($size==h4) {
+		font-size: 14px;
+		line-height: 1.5;
+		font-weight: bold;
+
+		@media (min-width: 768px) {
+			font-size: 16px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 20px;
+		}
+	}
+
+	@if ($size==h5) {
+		font-size: 10px;
+		line-height: 1.5;
+		font-weight: bold;
+
+		@media (min-width: 768px) {
+			font-size: 12px;
+		}
+	}
+
+	@if ($size==body) {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	@if ($size==body2) {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	@if ($size==lead) {
+		font-size: 20px;
+		line-height: 1.5;
+	}
+
+	@if ($size==caption) {
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	@if ($size==overline) {
+		font-size: 10px;
+		line-height: 1.5;
+	}
+
+}

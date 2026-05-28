@@ -1,0 +1,65 @@
+/* 記事ページ内 目次 */
+
+@use "sass:map";
+@use "../../global"as g;
+
+#toc_container {
+	display: grid;
+	gap: 8px;
+	border: solid g.$brand;
+	border-width: 2px 0;
+	padding: 8px 0;
+
+	@include g.mq(){
+		padding: 16px 0;
+		grid-template-columns: 32px auto;
+		gap: 16px;
+		width: fit-content;
+	}
+
+	.toc_title {
+		color: g.$brand;
+		font-weight: bold;
+	}
+
+	.toc_list {
+		display: grid;
+		gap: 8px;
+		margin: 0;
+		padding: 0;
+		counter-reset: listCount;
+		font-size: 12px;
+
+		@include g.mq() {
+			font-size: 14px;
+		}
+
+		li {
+			display: flex;
+			gap: 8px;
+			padding: 0;
+			position: relative;
+			margin-bottom: 0;
+
+			&::before {
+				counter-increment: listCount;
+				content: counter(listCount) ' :';
+				display: block;
+				color: g.$brand;
+				font-weight: bold;
+				font-family: g.$fontEN;
+			}
+
+			a {
+				color: g.$black;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+		}
+
+	}
+}

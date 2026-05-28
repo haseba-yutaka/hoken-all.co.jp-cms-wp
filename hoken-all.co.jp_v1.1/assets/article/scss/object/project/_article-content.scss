@@ -1,0 +1,6 @@
+/* 記事ページ内 コンテンツ */
+@use "../../global"as g;
+
+body.single .p-article-content {
+	@extend %post;
+}

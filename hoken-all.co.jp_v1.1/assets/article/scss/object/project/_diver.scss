@@ -1,0 +1,6 @@
+/* Diver本体CSS */
+@use "../../global"as g;
+
+.p-article-content {
+	@extend %diver;
+}

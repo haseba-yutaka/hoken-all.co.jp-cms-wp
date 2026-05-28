@@ -1,0 +1,209 @@
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+	z-index:100000;
+	font-family: Hiragino Kaku Gothic Pro,Osaka,"メイリオ","ＭＳ Ｐゴシック",Arial,Helvetica,sans-serif;
+	font-size: 14px;
+	color: #333;
+	line-height: 1.4;
+}
+.modal__bg {
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+	padding: 0 65px;
+	box-sizing: border-box;
+}
+@media screen and (max-width: 480px) {
+	.modal__bg {
+		padding: 0 6vw;
+	}	
+}
+.modal__content {
+	max-height: 60vh;
+	max-width: 700px;
+	width: 100%;
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+    text-align: left;
+}
+@media screen and (max-width: 480px) {
+	.modal__content {
+		width: 80vw;
+		max-height: 65vh;
+		padding: 4vw;
+	}
+}
+.modal__content a {
+	color: #333;
+}
+.btn__close {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+	.btn__close {
+		width: 7vw;
+		height: 7vw;
+		top: 4vw;
+		right: 4vw;
+	}
+}
+.btn__close span::before,
+.btn__close span::after {
+	display: block;
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 84%;
+	height: 1px;
+	margin: -8% 0 0 -42%;
+	background: #FFF;
+}
+.btn__close span::before {
+	transform: rotate(-45deg);
+}
+.btn__close span::after {
+	transform: rotate(45deg);
+}
+
+/*共通*/
+#modal__notice a,
+#modal__privacy a {
+    text-decoration: underline;
+}
+
+/*会社概要*/
+#modal__company h3.ttlLarge {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 16px;
+}
+#modal__company table {
+	width: 100%;
+	border-left: 1px solid #DDD;
+	border-top: 1px solid #DDD;
+}
+#modal__company table th,
+#modal__company table td {
+	padding: 15px;
+	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+#modal__company table th {
+    width: 30%;
+    background: #f8f8f8;
+}
+
+/*勧誘方針*/
+#modal__solicitation h3.ttlLarge {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 16px;
+}
+#modal__solicitation h4.ttlMedium,
+#modal__solicitation h5.ttlSmall{
+	margin: 20px 0 10px;
+	font-size: 14px;
+}
+#modal__solicitation ol {
+	padding-left: 20px;
+}
+#modal__solicitation ol li {
+	list-style: disc;
+}
+
+/*個人情報の取扱い*/
+#modal__privacy h3.ttlLarge {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 16px;
+}
+#modal__privacy h4.ttlSmall,
+#modal__privacy h5.ttlXsmall {
+	margin: 20px 0 10px;
+	font-size: 14px;
+}
+#modal__privacy ol {
+	padding-left: 20px;
+}
+#modal__privacy ol li {
+	list-style: disc;
+}
+#modal__privacy ol.decimal li {
+	list-style: decimal;
+}
+#modal__privacy table {
+	width: 100%;
+	margin: 20px 0 10px;
+	border-left: 1px solid #DDD;
+	border-top: 1px solid #DDD;
+}
+#modal__privacy table th,
+#modal__privacy table td {
+	padding: 15px;
+	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+}
+#modal__privacy table th {
+    width: 30%;
+    background: #f8f8f8;
+}
+#modal__privacy p {
+	margin-bottom: 10px;
+}
+#modal__privacy p.bgArea {
+	padding: 15px;
+	background: #f2f2f2;
+}
+
+/*ご利用上の注意事項*/
+#modal__notice h3.ttlLarge {
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 16px;
+}
+#modal__notice h4.ttlMedium {
+	margin: 20px 0 10px;
+	font-size: 14px;
+}
+#modal__notice ol {
+	padding-left: 20px;
+}
+#modal__notice ol li {
+	list-style: disc;
+}
+#modal__notice ol.decimal li {
+	list-style: decimal;
+}
+#modal__notice p {
+	margin-bottom: 10px;
+}
+#modal__notice p.alignR {
+	text-align: right;
+}
+
+#modal__privacy p {
+	margin: 20px 0 10px;
+}
+#modal__privacy ul li {
+	list-style-type: disc;
+	list-style-position: inside;
+	padding-left: 20px;
+}

@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+// ----------------
+// セクション
+// ----------------
+@use "./_import_section" as *;
+
+
+// ----------------
+// ページ単位
+// ----------------
+@use "./page/_base" as *;
+@use "./page/_index" as *;
+@use "./page/_flow" as *;
+@use "./page/_about" as *;
+@use "./page/_faq" as *;
+@use "./page/_news" as *;
+@use "./page/_purpose" as *;
+@use "./page/_voice" as *;
+@use "./page/_single" as *;
+@use "./page/_form" as *;
+@use "./page/_wp_plugin" as *;
+
+@use "./common/_parts" as parts;

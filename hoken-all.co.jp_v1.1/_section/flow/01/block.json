@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "acf/flow-01",
+    "title": "ご利用の流れ",
+    "description": "",
+    "style": [ "" ],
+    "category": "3df_section",
+    "icon": "book",
+    "keywords": ["ご利用の流れ"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+        "ClassName": false,
+        "html": false
+    },
+    "align": "full"
+}

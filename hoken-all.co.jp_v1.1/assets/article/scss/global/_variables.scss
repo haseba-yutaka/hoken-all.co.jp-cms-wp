@@ -1,0 +1,57 @@
+/* 変数 */
+
+/* 単色 */
+$black       : #2c3d44;
+$grayDark    : #555555;
+$gray        : #999999;
+$grayPale    : #babcbc;
+$grayLight   : #E5EDF2;
+$white       : #fff;
+
+$brand      : #0054a6;
+$brandLight : #009FE8;
+
+$cv   : #EF5B12;
+$jump : #19BC19;
+
+$info      : #2D9A9F;
+$alert     : #CC3F33;
+$highlight : #FFEB00;
+
+$colors : (
+	'black'       : $black,
+	'grayDark'    : $grayDark,
+	'gray'        : $gray,
+	'grayLight'   : $grayLight,
+	'white'       : $white,
+
+	'brand'      : $brand,
+	'brandLight' : $brandLight,
+
+	'cv'   : $cv,
+	'jump' : $jump,
+
+	'info'      : $info,
+	'alert'     : $alert,
+	'highlight' : $highlight,
+);
+
+/* フォント */
+$fontJP  : 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$fontEN  : 'Helvetica Neue', HelveticaNeue, Arial, sans-serif;
+
+/* ブレイクポイント */
+$breakpoints: (
+	'xs' : '376px',
+	'sm' : '414px',
+	'md' : '768px',
+	'lg' : '1024px',
+	'xl' : '1280px',
+	'xxl': '1440px'
+) !default;
+
+/* 文字サイズ */
+$fontSize : ( h1,h2,h3,h4,h5,d1,d2,d3,d4,d5,body,body2,lead,caption,overline );
+
+/* 共通ピクセル数 */
+$pixel: ( 4, 8, 16, 24, 32, 40, 48 );

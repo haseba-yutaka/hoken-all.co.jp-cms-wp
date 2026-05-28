@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "acf/feature-01",
+    "title": "特徴",
+    "description": "特徴のセクションです",
+    "style": [ "" ],
+    "category": "3df_section",
+    "icon": "book",
+    "keywords": ["特徴"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+        "ClassName": false,
+        "html": false
+    },
+    "align": "full"
+}

@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "acf/blogcard",
+    "title": "ブログカード",
+    "description": "ブログカードのセクションです",
+    "style": [ "" ],
+    "category": "3df_section",
+    "icon": "book",
+    "keywords": ["blog, blogcard, ブログカード"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+        "ClassName": false,
+        "html": false
+    },
+    "align": "full"
+}

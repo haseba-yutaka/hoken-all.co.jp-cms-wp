@@ -1,0 +1,19 @@
+{
+    "version": "1.0",
+    "name": "acf/versatility-text-block-01",
+    "title": "テキストブロック",
+    "description": "テキストブロックのセクションです",
+    "style": [ "" ],
+    "category": "3df_section",
+    "icon": "book",
+    "keywords": ["テキストブロック"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "block.php"
+    },
+    "supports": {
+        "ClassName": false,
+        "html": false
+    },
+    "align": "full"
+}

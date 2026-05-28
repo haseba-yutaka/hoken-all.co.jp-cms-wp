@@ -1,0 +1,91 @@
+@use "../_import"as *;
+
+.p-about-section-aboutList {
+  background: var(--brand-light-3);
+  padding: 80px 0;
+
+  @include mq(sm) {
+    padding: 56px 0;
+  }
+}
+
+.p-about-section-aboutList-main {
+  max-width: 920px;
+  width: 100%;
+  margin: 64px auto 0 auto;
+
+  @include mq(sm) {
+    margin-top: 32px;
+  }
+
+  .-about-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    gap: 40px 0;
+
+    @include mq(sm) {
+      gap: 24px 0;
+    }
+  }
+
+  .-about-item {
+    max-width: 33.3%;
+    width: 100%;
+    padding: 0 16px;
+
+    @include mq(sm) {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0 16px;
+    }
+
+    .-image {
+      height: 140px;
+      overflow: hidden;
+
+      @include mq(sm) {
+        max-height: 100px;
+        max-width: 160px;
+        width: 100%;
+      }
+
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .-info {
+      margin: 24px auto 0 auto;
+
+      @include mq(sm) {
+        width: 100%;
+        margin: 0;
+        text-align: justify;
+      }
+
+      @include mq(xxs) {}
+    }
+
+    .-info-title {
+      font-weight: var(--weight-noraml);
+      font-size: var(--fs-x-default);
+      line-height: 1.6;
+
+      @include mq(sm) {
+        font-size: var(--fs-default);
+      }
+
+      @include mq(xxs) {
+        font-size: 13px;
+      }
+
+      b {
+        color: var(--brand);
+      }
+    }
+  }
+}

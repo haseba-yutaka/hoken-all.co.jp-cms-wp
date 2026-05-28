@@ -1,0 +1,98 @@
+@use "../_import" as *;
+// ----------------------------------------
+//  news
+// ----------------------------------------
+.-item-news {
+  border-top: 1px solid var(--brand-light-3);
+}
+.-item-news__link {
+  display: flex;
+  align-items: center;
+  gap: 0 16px;
+  text-decoration: none !important;
+  color: initial !important;
+  padding: 24px 0;
+  background: var(--color-white);
+  transition: var(--transition);
+  &:hover {
+    background: var(--brand-light-3);
+    padding-left: 24px;
+    @include mq(sm) {
+      padding-left: 0;
+      background: none;
+    }
+  }
+  @include mq(sm) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 4px 0;
+  }
+}
+.-item-news__info {
+  display: flex;
+  align-items: center;
+  gap: 0 16px;
+  max-width: 180px;
+  width: 100%;
+  .-time {
+    font-family: var(--font-family-en);
+    font-size: var(--fs-small) !important;
+    font-weight: var(--weight-normal);
+    white-space: nowrap;
+  }
+  .-category {
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    span {
+      background: var(--brand);
+      color: var(--color-white);
+      font-weight: var(--weight-middle);
+      font-size: var(--fs-x-small) !important;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 12px;
+      border-radius: 50em;
+      line-height: 1;
+      white-space: nowrap;
+      &:first-child {
+        display: flex;
+      }
+    }
+  }
+}
+.-item-news__title {
+  font-size: var(--fs-default);
+  text-align: justify;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 0 0 12px;
+  br {
+    display: none;
+  }
+  @include mq(sm) {
+    text-align: justify;
+    overflow: visible;
+    white-space: normal;
+    padding: 0;
+  }
+}
+.-item-news__link {
+  &:hover {
+    .-item-news__title {
+      text-decoration: underline;
+      color: var(--color-gray);
+    }
+  }
+}
+
+
+// 管理画面用
+#editor {
+  .-item-news__link {
+    color: var(--color-gray) !important;
+    text-decoration: none !important;
+  }
+}

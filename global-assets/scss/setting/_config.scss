@@ -1,0 +1,19 @@
+$breakpoints: (
+  'xxs': 'screen and (max-width: 321px)',
+  'xs': 'screen and (max-width: 375px)',
+  'sm': 'screen and (max-width: 768px)',
+  'md': 'screen and (max-width: 992px)',
+  'lg': 'screen and (max-width: 1200px)',
+  'xl': 'screen and (max-width: 1280px)',
+  'ipadPro': 'screen and (max-width: 875px)',
+) !default;
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// 使い方
+@include mq(sm) {
+}

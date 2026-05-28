@@ -1,0 +1,143 @@
+@use "../_import" as *;
+
+.p-flow-section-flowList {
+  background: var(--color-light-gray-light);
+  padding: 80px 0;
+  @include mq(sm) {
+    padding: 56px 0;
+  }
+}
+.p-flow-section-flowList-main {
+  display: flex;
+  flex-direction: column;
+  gap: 72px 0;
+  margin: 48px auto 0 auto;
+  @include mq(sm) {
+    gap: 40px 0;
+    margin-top: 32px;
+  }
+}
+.p-flow-section-flowList-section {
+  background: var(--color-white);
+  border-radius: var(--border-radius-middle);
+  box-shadow: var(--shadow-border);
+  padding: 40px 40px 40px 72px;
+  text-align: justify;
+  position: relative;
+  @include mq(sm) {
+    padding: 16px;
+  }
+  +.p-flow-section-flowList-section {
+    &::before {
+      content: '';
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2261%22%20height%3D%2224%22%20viewBox%3D%220%200%2061%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M30.893%2023.55C30.5374%2023.8167%2030.0485%2023.8167%2029.693%2023.55L0.692967%201.8C-0.0758425%201.22339%200.331956%20-3.12924e-07%201.29297%20-3.12924e-07L59.293%20-3.12924e-07C60.254%20-3.12924e-07%2060.6618%201.22339%2059.893%201.8L30.893%2023.55Z%22%20fill%3D%22%2310288B%22%2F%3E%3C%2Fsvg%3E');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 64px 24px;
+      width: 64px;
+      height: 24px;
+      display: block;
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: -48px;
+      margin: 0 auto;
+      @include mq(sm) {
+        transform: scale(.7);
+        top: -32px;
+      }
+    }
+  }
+  .-label-number {
+    background: var(--brand);
+    color: var(--color-white);
+    font-family: var(--font-family-en);
+    font-size: var(--fs-large);
+    font-weight: var(--weight-bold);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50rem;
+    line-height: 1.1;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    @include mq(sm) {
+      width: 56px;
+      height: 56px;
+      font-size: var(--fs-x-middle);
+      top: -8px;
+      left: -8px;
+    }
+    small {
+      font-size: var(--fs-small);
+      @include mq(sm) {
+        font-size: var(--fs-x-small);
+      }
+    }
+  }
+  .-flowList-inner {
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 16px 0;
+    }
+  }
+  .-inner {
+    display: flex;
+    flex-direction: column;
+    @include mq(sm) {
+      order: 2;
+    }
+  }
+  .-image {
+    max-width: 240px;
+    height: auto;
+    object-fit: cover;
+    @include mq(sm) {
+      order: 1;
+      max-width: 160px;
+    }
+  }
+  .-title {
+    font-size: var(--fs-large);
+    line-height: 1.4;
+    @include mq(sm) {
+      font-size: var(--fs-middle);
+      text-align: center;
+    }
+  }
+  .-info {
+    margin: 8px 0 0 0;
+    p {
+      color: var(--color-gray);
+    }
+  }
+  .-info2 {
+    margin: 24px 0 0 0;
+    background: var(--brand-light-3);
+    padding: 24px;
+    @include mq(sm) {
+      padding: 16px;
+    }
+    h2, h3, h4, h5, h6 {
+      font-size: var(--fs-x-default);
+      color: var(--brand);
+      line-height: 1.4;
+    }
+    p {
+      margin: 8px 0 0 0;
+      color: var(--color-gray);
+      font-size: var(--fs-small);
+      @include mq(sm) {
+        margin-top: 4px;
+      }
+    }
+  }
+}
