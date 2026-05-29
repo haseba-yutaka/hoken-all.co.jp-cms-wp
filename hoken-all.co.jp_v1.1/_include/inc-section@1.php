@@ -1,5 +1,3 @@
-
-
 <section class="-section-main -section-feature__flow -bg-white">
   <div class="-section-inner">
     <ul class="-section-feature__flow-list">
@@ -14,8 +12,8 @@
         </p>
       </li>
       <li class="-flow-item">
-        <h3 class="-flow-item__title"><span class="-maker">保険の取り扱いは40社以上</span></h3>
-        <p class="-flow-item__label">幅広い選択肢をご用意</p>
+        <h3 class="-flow-item__title"><span class="-maker">保険の取り扱いは<span style="font-size:10px;">※</span>40社以上</span></h3>
+        <p class="-flow-item__label">幅広い選択肢をご用意<span style="font-size:10px; display:block;">※2026年4月時点</span></p>
         <figure class="-flow-item__image">
           <img src="<?= assetsPath('img') ?>/top/flow2.webp" alt="" loading="lazy">
         </figure>
@@ -41,13 +39,13 @@
         </figure>
         <p class="-flow-item__description">
           家事やお仕事の合間にご相談のお申し込みをしていただけます。最短「翌日」のご相談も可能となっております。
-          
+
         </p>
       </li>
       <li class="-flow-item">
-        <h3 class="-flow-item__title"><span class="-maker">累計相談件数は<span style="font-size:10px;">※</span>31万件</span></h3>
+        <h3 class="-flow-item__title"><span class="-maker">累計相談件数は<span style="font-size:10px;">※</span>34万件</span></h3>
         <p class="-flow-item__label">幅広い層の期待に応える高い相談実績
-        <span style="font-size:10px; display:block;">※2025年4月時点</span>
+          <span style="font-size:10px; display:block;">※2026年4月時点</span>
         </p>
         <figure class="-flow-item__image">
           <img src="<?= assetsPath('img') ?>/top/flow5.webp" alt="" loading="lazy">
