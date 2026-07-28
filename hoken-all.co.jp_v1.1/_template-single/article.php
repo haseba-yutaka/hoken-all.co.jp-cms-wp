@@ -36,7 +36,33 @@
 	</div>
 	<?php if ( has_post_thumbnail() ) : ?>
 		<div class="single-head__thumb">
-		<img src="<?php the_post_thumbnail_url( 'thumb-large' ); ?>" alt="<?php echo the_title_attribute(); ?>の画像" class="image" loading="lazy">
+            <?php
+                $thumb_id = get_post_thumbnail_id();
+                $full = wp_get_attachment_image_url($thumb_id, 'full');
+                $srcset = wp_get_attachment_image_srcset($thumb_id, 'full');
+                $sizes = wp_get_attachment_image_sizes($thumb_id, 'full');
+
+                $img = wp_get_attachment_image_src($thumb_id, 'full');
+                $width  = $img[1];
+                $height = $img[2];
+
+                $alt = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                if (!$alt) {
+                    $alt = get_the_title();
+                }
+                echo '<img
+                    src="' . esc_url($full) . '"
+                    srcset="' . esc_attr($srcset) . '"
+                    sizes="' . esc_attr($sizes) . '"
+                    width="' . esc_attr($width) . '"
+                    height="' . esc_attr($height) . '"
+                    loading="eager"
+                    fetchpriority="high"
+                    class="image"
+                    alt="' . esc_attr($alt) . '"
+                >';                
+            ?>
+            <?php /*<img src="<?php the_post_thumbnail_url( 'thumb-large' ); ?>" alt="<?php echo the_title_attribute(); ?>の画像" class="image" loading="lazy"> */ ?>
 		</div>
 	<?php endif; ?>
 	<div class="single-content__body">

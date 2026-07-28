@@ -143,3 +143,15 @@ function add_my_editor_style() {
 	}
 };
 add_action( 'pre_get_posts', 'add_my_editor_style' );
+
+/**
+ * imgパラメータ調整
+ */
+add_filter('wp_get_loading_optimization_attributes', function($attr, $tag_name, $context) {
+    if ($tag_name !== 'img') return $attr;
+    if (is_singular('article')) {
+        $attr['loading'] = 'lazy';
+        unset($attr['fetchpriority']);
+    }
+    return $attr;
+}, 10, 3);

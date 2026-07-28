@@ -1,0 +1,20 @@
+html{
+  /*scroll-behavior: auto;
+  */
+}
+
+.-footer-menu__item-inner .-footer-heading {
+    font-size: var(--fs-default);
+    font-weight: var(--weight-bold);
+    padding: 0 0 16px 0;
+    line-height: 1.2;
+}
+@media screen and (max-width: 768px) {
+    .-footer-menu__item-inner .-footer-heading {
+        font-size: 13px;
+    }
+}
+
+.js-main{
+    overflow-x: initial;
+}

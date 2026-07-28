@@ -62,17 +62,24 @@ function bodyAddClass() { ?>
     <?php else : ?>
         id="body-lower"
     <?php endif; ?>
-    <?= body_class(); ?>
+    <?php body_class(); ?>
 <?php }
 
 
 // サイトタイトル
 function siteTitle() {
     global $page, $paged;
+
+    // TOPページは固定タイトルを出力(wp_title()はフロントページで空文字になるため)
+    if (is_front_page()) {
+        echo '保険の無料相談・見直し｜ほけんのぜんぶ【公式】';
+        return;
+    }
+
     wp_title('|', true, 'right');
     // bloginfo('name');
     $site_description = get_bloginfo('description', 'display');
-    if ($site_description && (is_home() || is_front_page()))
+    if ($site_description && is_home())
         echo " | $site_description";
     if ($paged >= 2 || $page >= 2)
         echo ' | ' . sprintf(__('Page %s', 'enigma'), max($paged, $page));
