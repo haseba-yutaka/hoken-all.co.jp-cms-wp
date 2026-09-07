@@ -4,7 +4,7 @@
   <?php if (is_post_type_archive('article') || is_singular('article')) { ?>
     <meta name="referrer" content="no-referrer-when-downgrade">
   <?php } ?>
-  <title><?php siteTitle(); ?></title>
+  <?php /* <title><?php siteTitle(); ?></title> */ ?>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.0/dist/css/yakuhanjp.min.css">
   <?php $googleFont = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Poppins:wght@400;600&display=swap"; ?>
   <link rel="preconnect" href="https://fonts.googleapis.com">
