@@ -358,11 +358,6 @@
                       <span>くらしのぜんぶ</span>
                     </a>
                   </li>
-                  <li>
-                    <a class="" href="https://hoken-all.net/" target="_blank">
-                      <span>おかねとほけん</span>
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
