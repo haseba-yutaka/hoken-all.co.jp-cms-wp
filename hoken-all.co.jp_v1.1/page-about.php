@@ -9,7 +9,7 @@ template Name: ほけんのぜんぶとは（/about/）
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.min.js" integrity="sha512-lR/2z/m/AunQdfBTSR8gp9bwkrjwMq1cP0BYRIZu8zd4ycLcpRYJopB+WsBGPDjlkJUwC6VHCmuAXwwPHlacww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="-section-headLower-imageHeader">
-  <?php lowerHead('', ''); ?>
+  <?php lowerHead('', '保険相談・見直し・FP相談ができる無料サービス'); ?>
   <img class="-imageHeader" src="<?= assetsPath('img') ?>/visual/about.webp" alt="" loading="lazy">
 </div>
 
@@ -20,10 +20,9 @@ template Name: ほけんのぜんぶとは（/about/）
       プロにお任せください
     </h2>
     <div class="-body">
-    ほけんのぜんぶでは、みなさまの将来プランに<br>
-    寄り添いどうすればいいかを“明確化”します。<br>
-    お金のプロ（ファイナンシャルプランナー）が「保険・金融・住宅」に<br>
-    関するご提案をまるっとお届けするサービスです。
+      「ほけんのぜんぶ」は、保険・家計・教育資金・老後資金など、お金の悩みをまとめて整理できる無料のファイナンシャルプランナー（FP）相談サービスです。<br>
+      生命保険・医療保険・がん保険など、各種保険の見直しや比較、新規加入についてご相談いただけます。お客さまのライフステージやご希望を踏まえ、適した保険プランをご提案します。<br>
+      経験豊富なFPが一人ひとりのご状況に寄り添い、家計管理から将来の資金計画まで親身にサポートします。
     </div>
   </div>
 </div>
