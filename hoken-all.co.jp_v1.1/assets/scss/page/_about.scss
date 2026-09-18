@@ -1,6 +1,6 @@
 @use "../_import"as *;
 
-.p-about-section-aboutList {
+.p-about-section-canDo {
   background: var(--brand-light-3);
   padding: 80px 0;
 
@@ -9,83 +9,578 @@
   }
 }
 
-.p-about-section-aboutList-main {
-  max-width: 920px;
+.p-about-section-canDo-list {
+  max-width: 1067px;
   width: 100%;
-  margin: 64px auto 0 auto;
+  margin: 48px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
 
   @include mq(sm) {
     margin-top: 32px;
+    gap: 24px 0;
   }
 
-  .-about-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -16px;
-    gap: 40px 0;
-
-    @include mq(sm) {
-      gap: 24px 0;
-    }
-  }
-
-  .-about-item {
+  .-canDo-item {
     max-width: 33.3%;
     width: 100%;
     padding: 0 16px;
 
     @include mq(sm) {
       max-width: 100%;
+    }
+  }
+
+  .-icon {
+    width: 45px;
+    height: 45px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .-canDo-item__title {
+    margin-top: 16px;
+    font-weight: var(--weight-bold);
+    font-size: var(--fs-x-default);
+    line-height: 1.6;
+
+    @include mq(sm) {
+      font-size: var(--fs-default);
+    }
+  }
+
+  .-canDo-item__body {
+    margin-top: 8px;
+    font-size: var(--fs-small);
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+
+// ----------------------------------------
+// 保険の知識がゼロでも大丈夫 セクション
+// ----------------------------------------
+.p-about-section-beginner {
+  > .-section-inner > .-title {
+    text-align: center;
+  }
+
+  .-lead {
+    display: flex;
+    align-items: center;
+    gap: 0 64px;
+    max-width: 1067px;
+    margin: 40px auto 0 auto;
+
+    @include mq(sm) {
+      flex-direction: column;
+      gap: 24px 0;
+    }
+  }
+
+  .-lead-text {
+    flex: 1;
+
+    p {
+      line-height: 1.9;
+      text-align: justify;
+    }
+
+    .-note {
+      margin-top: 16px;
+      font-size: var(--fs-small);
+      opacity: .7;
+    }
+  }
+
+  .-lead-image {
+    max-width: 420px;
+    width: 100%;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  &__worries {
+    max-width: 1067px;
+    margin: 64px auto 0 auto;
+
+    .-subTitle {
+      font-size: var(--fs-x-middle);
+      font-weight: var(--weight-bold);
+      text-align: center;
+    }
+  }
+
+  .-worry-group {
+    margin-top: 32px;
+
+    &__label {
+      display: inline-block;
+      padding: 4px 16px;
+      background: var(--brand);
+      color: var(--color-white);
+      font-weight: var(--weight-bold);
+      border-radius: 4px;
+    }
+  }
+
+  .-worry-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+  }
+
+  .-worry-item {
+    padding: 24px;
+    background: var(--color-white);
+    border-radius: 8px;
+
+    &__head {
       display: flex;
-      align-items: center;
-      gap: 0 16px;
+      align-items: flex-start;
+      gap: 0 12px;
     }
 
-    .-image {
-      height: 140px;
-      overflow: hidden;
-
-      @include mq(sm) {
-        max-height: 100px;
-        max-width: 160px;
-        width: 100%;
-      }
-
-      img {
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-      }
+    .-icon {
+      width: 22px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 4px;
     }
 
-    .-info {
-      margin: 24px auto 0 auto;
-
-      @include mq(sm) {
-        width: 100%;
-        margin: 0;
-        text-align: justify;
-      }
-
-      @include mq(xxs) {}
-    }
-
-    .-info-title {
-      font-weight: var(--weight-noraml);
+    &__title {
+      font-weight: var(--weight-bold);
       font-size: var(--fs-x-default);
       line-height: 1.6;
+    }
 
-      @include mq(sm) {
-        font-size: var(--fs-default);
-      }
+    &__body {
+      margin-top: 12px;
+      font-size: var(--fs-small);
+      line-height: 1.8;
+      text-align: justify;
+    }
+  }
 
-      @include mq(xxs) {
-        font-size: 13px;
-      }
+  &__solution {
+    max-width: 1067px;
+    margin: 64px auto 0 auto;
+    padding: 48px 0;
 
-      b {
+    .-headLower-subTitle {
+      text-align: center;
+
+      small {
         color: var(--brand);
+        font-weight: var(--weight-bold);
       }
+    }
+
+    > .-body {
+      max-width: 800px;
+      margin: 24px auto 0 auto;
+      text-align: justify;
+      line-height: 1.9;
+    }
+  }
+
+  .-solution-steps {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 24px 0;
+
+    @include mq(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .-solution-step {
+    max-width: 25%;
+    width: 100%;
+    padding: 0 12px;
+    text-align: center;
+
+    @include mq(sm) {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: var(--color-white);
+      font-weight: var(--weight-bold);
+    }
+
+    &__title {
+      margin-top: 12px;
+      font-weight: var(--weight-bold);
+      line-height: 1.6;
+      min-height: 3.2em;
+    }
+
+    &__image {
+      margin-top: 16px;
+
+      img {
+        width: 100%;
+        max-width: 225px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+
+    &__body {
+      margin-top: 12px;
+      font-size: var(--fs-small);
+      line-height: 1.8;
+      text-align: justify;
+    }
+  }
+
+  .-solution-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 12px;
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 20px;
+    background: var(--brand-light-3);
+    border-radius: 8px;
+    text-align: center;
+
+    .-icon {
+      width: 28px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    p {
+      font-weight: var(--weight-bold);
+    }
+  }
+
+  &__fp {
+    max-width: 800px;
+    margin: 64px auto 0 auto;
+    text-align: center;
+
+    .-title {
+      font-size: var(--fs-x-middle);
+      font-weight: var(--weight-bold);
+    }
+
+    .-body {
+      margin-top: 16px;
+      text-align: justify;
+      line-height: 1.9;
+    }
+
+    .-note {
+      margin-top: 16px;
+      font-size: var(--fs-small);
+      opacity: .7;
+    }
+  }
+}
+
+// ----------------------------------------
+// ほけんのぜんぶが選ばれる理由 セクション
+// ----------------------------------------
+.p-about-section-reasons {
+  .-headLower-subTitle {
+    text-align: center;
+
+    .-description {
+      max-width: 800px;
+      margin: 16px auto 0 auto;
+      text-align: justify;
+      line-height: 1.9;
+    }
+  }
+}
+
+.p-about-section-reasons-list {
+  max-width: 1067px;
+  width: 100%;
+  margin: 48px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+
+  @include mq(sm) {
+    margin-top: 32px;
+    gap: 24px 0;
+  }
+
+  .-reasons-item {
+    max-width: 50%;
+    width: 100%;
+    padding: 0 16px;
+
+    @include mq(sm) {
+      max-width: 100%;
+    }
+
+    &__image {
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+
+    &__title {
+      margin-top: 16px;
+      font-weight: var(--weight-bold);
+      font-size: var(--fs-x-default);
+      line-height: 1.6;
+    }
+
+    &__body {
+      margin-top: 8px;
+      font-size: var(--fs-small);
+      line-height: 1.8;
+      text-align: justify;
+    }
+  }
+}
+
+// ----------------------------------------
+// ご相談の流れ / ご準備いただくもの セクション
+// ----------------------------------------
+.p-about-section-flow {
+  .-headLower-subTitle {
+    text-align: center;
+
+    .-description {
+      max-width: 800px;
+      margin: 16px auto 0 auto;
+      text-align: justify;
+      line-height: 1.9;
+    }
+  }
+
+  .-subTitle {
+    font-size: var(--fs-x-middle);
+    font-weight: var(--weight-bold);
+    text-align: center;
+  }
+
+  &__steps {
+    max-width: 1067px;
+    margin: 64px auto 0 auto;
+  }
+}
+
+.-flow-steps-list {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 32px;
+  gap: 0;
+
+  @include mq(sm) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.-flow-step {
+  flex: 1;
+  text-align: center;
+
+  &__num {
+    display: inline-block;
+    font-family: var(--font-family-en);
+    font-weight: var(--weight-bold);
+    color: var(--brand);
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    margin: 8px auto 0 auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-weight: var(--weight-bold);
+    font-size: var(--fs-x-default);
+  }
+
+  &__body {
+    margin-top: 8px;
+    font-size: var(--fs-small);
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+
+.-flow-step-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  margin-top: 40px;
+  text-align: center;
+
+  img {
+    width: 18px;
+    height: auto;
+  }
+
+  @include mq(sm) {
+    width: 100%;
+    margin: 8px 0;
+
+    img {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.p-about-section-flow__prepare {
+  max-width: 1067px;
+  margin: 64px auto 0 auto;
+  text-align: center;
+
+  .-lead {
+    margin-top: 16px;
+    font-weight: var(--weight-bold);
+  }
+
+  .-lead2 {
+    margin-top: 8px;
+    font-size: var(--fs-small);
+  }
+}
+
+.-prepare-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  gap: 16px 0;
+  text-align: left;
+
+  .-prepare-item {
+    max-width: 50%;
+    width: 100%;
+    padding: 0 16px;
+
+    @include mq(sm) {
+      max-width: 100%;
+    }
+
+    &__head {
+      display: flex;
+      align-items: flex-start;
+      gap: 0 12px;
+
+      .-icon {
+        width: 22px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+    }
+
+    &__title {
+      font-weight: var(--weight-bold);
+    }
+
+    &__body {
+      margin-top: 4px;
+      margin-left: 34px;
+      font-size: var(--fs-small);
+    }
+  }
+}
+
+// ----------------------------------------
+// 口コミ セクション
+// ----------------------------------------
+.p-about-section-voice__google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 650px;
+  margin: 40px auto 0 auto;
+  padding: 24px 32px;
+  background: var(--color-light-gray-light);
+  border-radius: 8px;
+
+  @include mq(sm) {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .-google-rating {
+    flex-shrink: 0;
+
+    &__label {
+      font-size: var(--fs-small);
+      font-weight: var(--weight-bold);
+    }
+
+    &__score {
+      margin-top: 4px;
+      font-size: var(--fs-xx-large);
+      font-weight: var(--weight-xbold);
+      color: var(--brand);
+
+      .-star {
+        margin-right: 4px;
+        color: #FFC107;
+      }
+    }
+  }
+
+  .-google-rating-divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--color-light-gray);
+
+    @include mq(sm) {
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  .-google-rating__note {
+    font-size: var(--fs-small);
+    line-height: 1.8;
+    text-align: left;
+
+    .-note {
+      margin-top: 4px;
+      opacity: .7;
     }
   }
 }
